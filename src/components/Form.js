@@ -9,7 +9,13 @@ export const Form = () => {
     const submitHandler = event => {
         event.preventDefault()
 
-        
+        if(value.trim()){
+            //...
+            alert.show('Заметка была создана', 'success')
+            setValue('')
+        } else {
+            alert.show('Введите название заметки')
+        }
     }
 
     return(

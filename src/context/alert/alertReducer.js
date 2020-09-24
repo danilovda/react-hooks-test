@@ -1,4 +1,3 @@
-import { hydrate } from "react-dom"
 import { HIDE_ALERT, SHOW_ALERT } from "../types"
 
 const handlers = {
