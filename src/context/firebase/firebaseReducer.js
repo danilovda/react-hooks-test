@@ -6,11 +6,14 @@ const handlers = {
         ...state, 
         notes: [...state.notes, payload]
     }),
-    [FETCH_NOTES]: (state, {payload}) => ({...state, nodes: payload}),
-    [REMOVE_NOTE]: (state, {payload}) => ({
-        ...state,
-        notes: state.notes.filters(note => note.id !== payload)
-    }),
+    [FETCH_NOTES]: (state, {payload}) => ({...state, notes: payload, loading: false}),
+    [REMOVE_NOTE]: (state, {payload}) => {
+        //console.log('state', state)
+        return{
+            ...state,
+            notes: state.notes.filter(note => note.id !== payload)
+        }
+    },
     DEFAULT: state => state
 }
 
